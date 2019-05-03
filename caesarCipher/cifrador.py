@@ -1,3 +1,20 @@
+'''
+Este e o nosso software de Cifra de Cesar em Python, criado por Lucas Anjos (https://github.com/luskas8) e Vinicius Carvalho (https://github.com/slackbot115).
+
+A cifra de Cesar consiste em ser uma criptografia de substituicao, propriamente dito substitui letras de uma palavra por outras em função de dificultar a leitura humana.
+
+Para utilizar a cifra e necessario:
+    - A frase que voce deseja cifrar
+    - A chave que seria basicamente um numero de 1 a 26, que seria o tanto de "casas" que seriam puladas ou passadas para se obter a nova frase
+
+Exemplo: 
+
+Frase sem encriptacao: criptografia
+Chave: 13
+A frase encriptada: pevcgbtensvn
+'''
+
+#Este metodo e utilizado para encriptar a palavra ou frase digitada
 def cifrador(cifra, key):
     cifra.lower()
     new_char = ''
@@ -15,6 +32,7 @@ def cifrador(cifra, key):
 
     return new_char
 
+#Este metodo e utilizado para decriptar a palavra ou frase digitada com a cifra de Cesar utilizando a forma de forca bruta (brute force)
 def decriptar(cifra):
     cifra.lower()
     new_char = ''
@@ -49,6 +67,7 @@ def decriptar(cifra):
             return 'Palavra não semelhante a nada no portugues'
             exit()        
 
+#Este metodo e utilizado para decriptar a palavra ou frase digitada com a cifra de Cesar ja conhecendo a chave de encriptacao
 def decriptar_key(cifra, key):
     cifra.lower()
     new_char = ''
@@ -66,6 +85,7 @@ def decriptar_key(cifra, key):
 
     return new_char
 
+#Inicia o programa dando as opcoes para a utilizacao do programa
 def main():
     try:
         op = int(input('Digite a opção desejada: \n1 - Encriptacao \n2 - Decriptacao\n'))
